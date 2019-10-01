@@ -1,11 +1,13 @@
-# Redis
+# Redis-Rejson
 
 [Redis](http://redis.io/) is an advanced key-value cache and store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets, sorted sets, bitmaps and hyperloglogs.
 
 ## TL;DR;
 
 ```bash
-$ helm install stable/redis-ha
+$ git clone https://github.com/harsh4870/Redis-Rejson-HA-Helm-Chart.git
+
+$ helm install --name redis . 
 ```
 
 By default this chart install 3 pods total:
@@ -30,7 +32,9 @@ Please note that there have been a number of changes simplifying the redis manag
 To install the chart
 
 ```bash
-$ helm install stable/redis-ha
+$ git clone https://github.com/harsh4870/Redis-Rejson-HA-Helm-Chart.git
+
+$ helm install --name redis . 
 ```
 
 The command deploys Redis on the Kubernetes cluster in the default configuration. By default this chart install one master pod containing redis master container and sentinel container along with 2 redis slave pods each containing their own sentinel sidecars. The [configuration](#configuration) section lists the parameters that can be configured during installation.
@@ -121,7 +125,7 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 $ helm install \
   --set image=redis \
   --set tag=5.0.5-alpine \
-    stable/redis-ha
+    .
 ```
 
 The above command sets the Redis server within `default` namespace.
@@ -129,7 +133,7 @@ The above command sets the Redis server within `default` namespace.
 Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
 
 ```bash
-$ helm install -f values.yaml stable/redis-ha
+$ helm install -f values.yaml .
 ```
 
 > **Tip**: You can use the default [values.yaml](values.yaml)
